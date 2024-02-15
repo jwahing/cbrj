@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'CBRJ App',
+    'title' => 'AdminLTE 3',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => true,
+    'use_ico_only' => false,
     'use_full_favicon' => false,
 
     /*
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => 'CBRJ Wired Internet',
-    'logo_img' => 'img/cbrjj.jpg',
+    'logo' => '<b>CBRJ</b> Main',
+    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -130,7 +130,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => true,
+    'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -150,9 +150,9 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => true,
-    'layout_fixed_navbar' => true,
-    'layout_fixed_footer' => true,
+    'layout_fixed_sidebar' => null,
+    'layout_fixed_navbar' => null,
+    'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
     /*
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'app/admin',
+    'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -292,50 +292,40 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'text'   => 'CBRJ Wired Internet Services',
-            'url'    => 'admin',
-            'topnav' => true,
+            'type'         => 'navbar-search',
+            'text'         => 'search',
+            'topnav_right' => true,
+        ],
+        [
+            'type'         => 'fullscreen-widget',
+            'topnav_right' => true,
         ],
 
         // Sidebar items:
-        /** [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ], */
         [
-            'text'        => 'Dashboard',
-            'url'         => 'app/admin',
-            'icon'        => 'nav-icon fas fa-tachometer-alt',
-            'label_color' => 'success',
+            'text' => 'blog',
+            'url'  => 'admin/blog',
+            'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'User Management',
-            'url'         => 'app/admin',
-            'icon'        => 'nav-icon fas fa-users',
-            'label_color' => 'success',
+            'text' => 'Home',
+            'url'  => 'home',
+            'icon' => 'fas fa-fw fa-home',
         ],
         [
-            'text'        => 'Departments',
-            'url'         => 'app/admin/departments',
-            'icon'        => 'far fa-circle nav-icon',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'Positions',
-            'url'         => 'app/admin/positions',
-            'icon'        => 'far fa-circle nav-icon',
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Users',
+            'url'  => 'admin/users',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Departments',
+            'url'  => 'admin/department',
+            'icon' => 'fas fa-fw fa-building',
+        ],
+        [
+            'text' => 'Positions',
+            'url'  => 'admin/position',
+            'icon' => 'fas fa-fw fa-building',
         ],
     ],
 
@@ -375,21 +365,21 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],
